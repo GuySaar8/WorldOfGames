@@ -5,6 +5,7 @@ import random
 import time
 from ManegeGame import GameManager
 import os
+from Score import add_score
 
 
 def print_hello():
@@ -37,7 +38,7 @@ def guess_game(difficulty):
 
     # Start Guessing game
     # secret = random.randint(1, int(odds))  # random number
-    secret = random.randint(1, odds)  # random number
+    secret = random.randint(1, 1)  # random number
 
     # get number from user
     os.system('clear')
@@ -55,6 +56,10 @@ def guess_game(difficulty):
             print("Trail Number ", out_of_loop, " of ", difficulty)
             print("The number that was chosen was: ", secret)
             time.sleep(5)
+            print("*" * 70)
+            add_score(difficulty)
+            print("*" * 70)
+            time.sleep(5)
             os.system('clear')
             GameManager.again(game_id, difficulty)
 
@@ -69,6 +74,10 @@ def guess_game(difficulty):
                     print("Trail Number ", out_of_loop, " of ", difficulty)
                     print("The number that was chosen was: ", secret)
                     time.sleep(5)
+                    print("*"*70)
+                    add_score(difficulty)
+                    print("*" * 70)
+                    time.sleep(5)
                     os.system('clear')
                     GameManager.again(game_id, difficulty)
                 else:  # last append is not digit - random number was add
@@ -77,6 +86,12 @@ def guess_game(difficulty):
                     print("The number that was chosen was: ", secret)
                     time.sleep(5)
                     GameManager.again(game_id, difficulty)
+            else:  # a good last trail, but still lost
+                print("You Lost To The Game Master")
+                print("Your choices ", user_chosen_nums)
+                print("The number that was chosen was: ", secret)
+                time.sleep(5)
+                GameManager.again(game_id, difficulty)
 
         elif if_digit is True and choose_num > odds:  # out of range
             os.system('clear')
