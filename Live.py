@@ -4,7 +4,6 @@
 import os
 from ManegeGame import GameManager
 
-
 #####################
 # Define functions
 #####################
@@ -130,7 +129,8 @@ def load_game():  # loading will get the game_id and difficulty
         game_id = 'Guess Game'
     elif choose_num == 3:
         game_id = 'Currency Roulette'
-
+    elif choose_num == 4:
+        game_id = 'Luki VS Thor'
     os.system('clear')  # clear screen
 
     # Choose difficulty

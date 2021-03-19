@@ -106,3 +106,9 @@ class GameManager:
         print("You were out of range")
         print("There for a random number was added")
         print("There for a random number was added")
+
+
+
+
+
+

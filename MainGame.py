@@ -35,6 +35,6 @@ def start():
 # START
 #####################
 
-log()
+user = log()
 
 start()
